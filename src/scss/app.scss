@@ -1,0 +1,19 @@
+/* Core styles */
+@import 'base/base';
+
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+/* Components */
+@import 'components/header';
+@import 'components/button';
+@import 'components/swiper';
+
+/* Containers */
+@import 'containers/index';
