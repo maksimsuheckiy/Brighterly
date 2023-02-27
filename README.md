@@ -1,4 +1,4 @@
-# Webpack 5 Boilerplate Template
+# Webpack 5
 
 ![Maintenance](https://img.shields.io/maintenance/yes/2023?logo=github)
 ![webpack-current](https://img.shields.io/badge/webpack-v5.75.0-green?logo=webpack)
