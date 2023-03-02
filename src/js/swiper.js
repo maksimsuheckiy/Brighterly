@@ -1,41 +1,72 @@
-import Swiper, {Navigation, Pagination} from "swiper";
-
 new Swiper(".evaluate-swiper", {
+    effect: "cards",
+    grabCursor: true,
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    modules: [Navigation, Pagination],
+    cardsEffect: {
+        slideShadows: false,
+    },
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+    },
+    breakpoints: {
+        768: {
+            cardsEffect: {
+                slideShadows: false,
+                rotate: false,
+            },
+        },
+        1220: {
+            cardsEffect: {
+                slideShadows: false,
+                rotate: false,
+                perSlideOffset: 8,
+            },
+        },
     },
 });
-
 new Swiper(".review-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    effect: "cards",
+    grabCursor: true,
     loop: true,
-    modules: [Navigation, Pagination],
+    cardsEffect: {
+        slideShadows: false,
+        rotate: false,
+        perSlideOffset: 9.5,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+    },
     breakpoints: {
+        380: {
+            cardsEffect: {
+                perSlideOffset: 10,
+            },
+        },
+        480: {
+            cardsEffect: {
+                perSlideOffset: 12,
+            },
+        },
         640: {
-            slidesPerView: 2,
-            spaceBetween: 10
+            cardsEffect: {
+                perSlideOffset: 15,
+            },
         },
         768: {
-            slidesPerView: 2.5,
-            spaceBetween: 7
-        },
-        930: {
-            slidesPerView: 2.8,
-            spaceBetween: 10
+            cardsEffect: {
+                perSlideOffset: 18,
+            },
         },
         992: {
+            effect: false,
             slidesPerView: 6,
             autoHeight: true
         }
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
     },
 });

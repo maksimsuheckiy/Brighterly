@@ -20,6 +20,106 @@
     object-fit: contain;
 }
 
+/* review swiper styles */
+
+.review-swiper {
+    width: 100%;
+    max-width: 210px;
+    @media screen and (min-width: 380px) {
+        max-width: 230px;
+    }
+
+    @media screen and (min-width: 480px) {
+        max-width: 275px;
+    }
+
+    @media screen and (min-width: 640px) {
+        max-width: 320px;
+    }
+
+    @media screen and (min-width: 992px) {
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: 992px) {
+        & > .swiper-wrapper {
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-content: center;
+            gap: 24px;
+            height: 100% !important;
+            max-height: 790px;
+
+            &:before, &:after {
+                content: "";
+                flex-basis: 100%;
+                width: 0;
+                order: 2;
+            }
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        max-width: 255px;
+        height: auto;
+        @media screen and (min-width: 640px) {
+            max-width: 400px;
+        }
+
+        @media screen and (min-width: 992px) {
+            max-width: 392px;
+        }
+
+        & > img {
+            width: auto;
+            height: 100%;
+            object-fit: unset;
+            @media screen and (min-width: 992px) {
+                height: auto;
+                max-height: none;
+                width: 100%;
+                max-width: 392px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            margin: 0 !important;
+            width: calc(33.3% - 24px) !important;
+            &:nth-child(3n+1) {
+                order: 1;
+            }
+
+            &:nth-child(3n+2) {
+                order: 2;
+            }
+
+            &:nth-child(3n) {
+                order: 3;
+            }
+        }
+    }
+
+    &.swiper-cards {
+        overflow: visible;
+    }
+
+    &__pagination {
+        bottom: -35px !important;
+        & > .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: transparent;
+            border: 2px solid $primary;
+            opacity: 1;
+        }
+
+        & > .swiper-pagination-bullet-active {
+            background-color: $primary;
+        }
+    }
+}
+
 /* evaluate swiper styles */
 
 .evaluate-swiper-wrap {
@@ -48,8 +148,12 @@
         min-height: 270px;
     }
 
+    @media screen and (min-width: 820px) {
+        min-height: 290px;
+    }
+
     @media screen and (min-width: 992px) {
-        min-height: 310px;
+        min-height: 330px;
     }
 
     @media screen and (min-width: 1020px) {
@@ -59,122 +163,47 @@
     @media screen and (min-width: 1080px) {
         min-height: 340px;
     }
-}
 
-.evaluate-swiper-slide img {
-    max-height: 165px;
-    @media screen and (min-width: 420px) {
-        max-height: 200px;
+    @media screen and (min-width: 1220px) {
+        overflow: visible;
     }
 
-    @media screen and (min-width: 480px) {
-        max-height: 260px;
-    }
+    &__slide {
+        & > img {
+            max-height: 165px;
+            @media screen and (min-width: 420px) {
+                max-height: 200px;
+            }
 
-    @media screen and (min-width: 640px) {
-        max-height: 300px;
-    }
+            @media screen and (min-width: 480px) {
+                max-height: 260px;
+            }
 
-    @media screen and (min-width: 768px) {
-        max-height: 230px;
-    }
+            @media screen and (min-width: 640px) {
+                max-height: 300px;
+            }
 
-    @media screen and (min-width: 992px) {
-        max-height: 300px;
-    }
-}
+            @media screen and (min-width: 768px) {
+                height: 260px;
+            }
 
-.evaluate-swiper-pagination > .swiper-pagination-bullet {
-    background-color: #CEDCE3;
-    opacity: 1;
-}
-
-.evaluate-swiper-pagination > .swiper-pagination-bullet-active {
-    width: 56px;
-    border-radius: 4px;
-    background-color: $primary;
-}
-
-/* review swiper styles */
-
-.review-swiper {
-    min-height: 320px;
-    @media screen and (min-width: 420px) {
-        min-height: 370px;
-    }
-
-    @media screen and (min-width: 480px) {
-        min-height: 420px;
-    }
-
-    @media screen and (min-width: 480px) {
-        min-height: 370px;
-    }
-
-    @media screen and (min-width: 992px) {
-        & > .swiper-wrapper {
-            flex-flow: column wrap;
-            justify-content: flex-start;
-            align-content: center;
-            gap: 24px;
-            height: 100% !important;
-            max-height: 790px;
-            &:before, &:after {
-                content: "";
-                flex-basis: 100%;
-                width: 0;
-                order: 2;
+            @media screen and (min-width: 992px) {
+                height: 300px;
+                object-fit: unset;
             }
         }
     }
-}
 
-.review-swiper-slide {
-    @media screen and (min-width: 992px) {
-        margin: 0 !important;
-        width: calc(33.3% - 24px) !important;
-        &:nth-child(3n+1) {
-            order: 1;
+    &__pagination {
+        & > .swiper-pagination-bullet {
+            background-color: #CEDCE3;
+            opacity: 1;
         }
 
-        &:nth-child(3n+2) {
-            order: 2;
-        }
-
-        &:nth-child(3n) {
-            order: 3;
+        > .swiper-pagination-bullet-active {
+            width: 56px;
+            border-radius: 4px;
+            background-color: $primary;
         }
     }
-}
-
-.review-swiper-slide img {
-    max-height: 280px;
-    @media screen and (min-width: 420px) {
-        max-height: 330px;
-    }
-
-    @media screen and (min-width: 480px) {
-        max-height: 320px;
-    }
-
-    @media screen and (min-width: 640px) {
-        max-height: 320px;
-    }
-
-    @media screen and (min-width: 992px) {
-        height: auto;
-        max-height: none;
-    }
-}
-
-.review-swiper-pagination > .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: transparent;
-    border: 2px solid $primary;
-    opacity: 1;
-}
-
-.review-swiper-pagination > .swiper-pagination-bullet-active {
-    background-color: $primary;
 }
